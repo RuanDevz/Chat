@@ -1,0 +1,71 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #1A1924;
+    width: 100vw;
+    height: 100vw;
+}
+
+.cabecalho{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cabecalho h1{
+    color: white;
+}
+
+.cabecalho div#disponivel{
+    color: #00B37E;
+    font-weight: bold;
+}
+
+.cabecalho div#disponivel::before{
+    content: "aa";
+    margin: 5px;
+    width: 40%;
+    background-color: #00B37E;
+    border-radius: 50%;
+}
+
+section{
+    color: white;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+form input#chat{
+    width: 880px;
+    height: 52px;
+    padding: 14px 24px;
+    border-radius: 20px;
+    background: #282843;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 200px;
+}
+
+form input#chat:focus{
+    outline: 0;
+}
+
+span#send{
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    left: 340px;
+    margin-top: 200px;
+}
