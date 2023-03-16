@@ -1,13 +1,18 @@
+//VARIAVEIS
 const send = document.getElementById('send');
 const mensagem = document.getElementById('mensagem');
 const chat = document.getElementById('chat');
 const horarios = document.querySelectorAll('#horario');
-
+const disponível = document.getElementById('disponivel');
 const voce = 'Você';
 const usuario = 'Cecilia';
 
-send.addEventListener('click', enviarMensagem);
+//EVENTOS
 
+send.addEventListener('click', enviarMensagem);
+disponível.addEventListener('click',mudarstatus)
+
+//FUNCÕES
 function enviarMensagem(event) {
   event.preventDefault();
 
@@ -29,3 +34,18 @@ function enviarMensagem(event) {
   mensagem.appendChild(novoParagrafo);
   chat.value = '';
 }
+
+function mudarstatus() {
+    if (disponível.classList.contains('disponivel')) {
+      disponível.classList.remove('disponivel');
+      disponível.textContent = 'Ausente';
+      disponível.style.color = 'yellow';
+    } else {
+      disponível.classList.add('disponivel');
+      disponível.textContent = 'Disponível';
+      disponível.style.color = '#00B37E';
+    }
+  }
+  
+  
+
