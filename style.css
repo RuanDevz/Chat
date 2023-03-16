@@ -41,6 +41,10 @@ p, div#mensagem{
     margin-top: 5px;
     margin-left: 20px;
 }
+
+p#horario{
+    background-color: #1A1924;
+}
 section{
     color: white;
 }
@@ -54,6 +58,7 @@ div#mensagem{
 .mensagens{
     margin-top: 50px;
 }
+
 
 form{
     display: flex;
