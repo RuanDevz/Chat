@@ -27,12 +27,15 @@ function enviarMensagem(event) {
   const minutos = dados.getMinutes();
   novoHorario.textContent = `${hora}:${minutos} - ${voce}`;
 
-  const novoParagrafo = document.createElement('p');
+  const novoParagrafo = document.createElement('div');
   novoParagrafo.textContent = conteudoChat;
 
-  mensagem.appendChild(novoHorario);
+
+  horario.appendChild(novoHorario);
   mensagem.appendChild(novoParagrafo);
   chat.value = '';
+
+  mensagem.style.padding = '5px'
 }
 
 function mudarstatus() {

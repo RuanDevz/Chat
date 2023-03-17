@@ -50,9 +50,13 @@ section{
 }
 
 div#mensagem{
+    display: inline-block;
     background-color: #00B37E;
     border-radius: 20px;
-    max-width: 150px;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: left;
+    max-width: 300px;
 }
 
 .mensagens{
