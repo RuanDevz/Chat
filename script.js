@@ -2,15 +2,13 @@
 const send = document.getElementById('send');
 const mensagem = document.getElementById('mensagem');
 const chat = document.getElementById('chat');
-const horarios = document.querySelectorAll('#horario');
 const disponível = document.getElementById('disponivel');
 const voce = 'Você';
 const usuario = 'Cecilia';
 
 //EVENTOS
-
 send.addEventListener('click', enviarMensagem);
-disponível.addEventListener('click',mudarstatus)
+disponível.addEventListener('click', mudarstatus);
 
 //FUNCÕES
 function enviarMensagem(event) {
@@ -21,33 +19,22 @@ function enviarMensagem(event) {
     return;
   }
 
-  const novoHorario = document.createElement('p');
-  const dados = new Date();
-  const hora = dados.getHours();
-  const minutos = dados.getMinutes();
-  novoHorario.textContent = `${hora}:${minutos} - ${voce}`;
-
   const novoParagrafo = document.createElement('div');
   novoParagrafo.textContent = conteudoChat;
 
+  const novoHorario = document.createElement('p');
+  const dados = new Date();
+  const hora = dados.getHours();
+  let minutos = dados.getMinutes();
+  if (minutos < 10) {
+    minutos = `0${minutos}`;
+  }
+  novoHorario.textContent = `${hora}:${minutos} - ${voce}`;
 
-  horario.appendChild(novoHorario);
+  mensagem.appendChild(novoHorario);
   mensagem.appendChild(novoParagrafo);
   chat.value = '';
 
-  mensagem.style.padding = '5px'
+  mensagem.style.padding = '5px';
 }
 
-function mudarstatus() {
-    if (disponível.classList.contains('disponivel')) {
-      disponível.classList.remove('disponivel');
-      disponível.textContent = 'Ausente';
-      disponível.style.color = 'yellow';
-    } else {
-      disponível.classList.add('disponivel');
-      disponível.textContent = 'Disponível';
-      disponível.style.color = '#00B37E';
-    }
-  }
-  
-  
